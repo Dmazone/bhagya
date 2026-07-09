@@ -16,8 +16,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
   <!-- ── 기본 SEO 태그 ──────────────────────────────────── -->
-  <title>K-드라마 감성으로 보는 나의 오늘 럭키 베다 카드 🔮</title>
-  <meta name="description" content="고대 베다 지혜와 K-드라마 감성이 만났다! 오늘의 행운 카드를 뽑아보세요 ✨ Today&#x27;s Vedic lucky card is waiting for you!" />
+  <title>🔮 Reveal Your Vedic Lucky Card Today! Free &amp; Instant</title>
+  <meta name="description" content="Ancient Vedic wisdom reveals your lucky number, colour &amp; auspicious time in seconds ✨ Trusted cosmic reading — try it free now! 🙏" />
   <meta name="theme-color" content="#f97316" />
 
   <!-- ── Open Graph (WhatsApp / Facebook 링크 미리보기) ───
@@ -25,8 +25,8 @@
        OG 이미지는 1200×630px 권장 (dist/ 폴더 옆에 이미지 파일을 두세요)
   ──────────────────────────────────────────────────────── -->
   <meta property="og:type"        content="website" />
-  <meta property="og:title"       content="K-드라마 감성으로 보는 나의 오늘 럭키 베다 카드 🔮" />
-  <meta property="og:description" content="고대 베다 지혜와 K-드라마 감성이 만났다! 오늘의 행운 카드를 뽑아보세요 ✨ Today&#x27;s Vedic lucky card is waiting for you!" />
+  <meta property="og:title"       content="🔮 Reveal Your Vedic Lucky Card Today! Free &amp; Instant" />
+  <meta property="og:description" content="Ancient Vedic wisdom reveals your lucky number, colour &amp; auspicious time in seconds ✨ Trusted cosmic reading — try it free now! 🙏" />
   <meta property="og:image"       content="https://dmazone.github.io/bhagya/og.jpg" />
   <meta property="og:url"         content="https://dmazone.github.io/bhagya" />
   <meta property="og:site_name"   content="Global Lucky Vending Machine" />
@@ -34,8 +34,8 @@
 
   <!-- ── Twitter/X 카드 태그 ──────────────────────────── -->
   <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="K-드라마 감성으로 보는 나의 오늘 럭키 베다 카드 🔮" />
-  <meta name="twitter:description" content="고대 베다 지혜와 K-드라마 감성이 만났다! 오늘의 행운 카드를 뽑아보세요 ✨ Today&#x27;s Vedic lucky card is waiting for you!" />
+  <meta name="twitter:title"       content="🔮 Reveal Your Vedic Lucky Card Today! Free &amp; Instant" />
+  <meta name="twitter:description" content="Ancient Vedic wisdom reveals your lucky number, colour &amp; auspicious time in seconds ✨ Trusted cosmic reading — try it free now! 🙏" />
   <meta name="twitter:image"       content="https://dmazone.github.io/bhagya/og.jpg" />
 
   <!-- ── Tailwind CSS CDN ────────────────────────────────
@@ -54,6 +54,28 @@
   ──────────────────────────────────────────────────────── -->
   <script src="https://pl30266860.effectivecpmnetwork.com/18/6a/c8/186ac8497a54269d48446588828ff834.js"></script>
 <script src="https://pl30266863.effectivecpmnetwork.com/b0/f9/5c/b0f95c6659075e426bc04c507ff6ae00.js"></script>
+
+  <!-- ── Social Bar 클릭 가로채기 방지 ─────────────────
+       Adsterra Social Bar의 invoke_layer(투명 전체화면 <a>)가
+       CTA 버튼 클릭을 가로채는 문제를 수정합니다.
+       광고 수익에는 영향 없음 — 팝언더/배너/소셜바 알림은 정상 유지.
+  ──────────────────────────────────────────────────────── -->
+  <script>
+    (function () {
+      function patchSocialBarOverlay() {
+        document.querySelectorAll('a').forEach(function (a) {
+          var cs = getComputedStyle(a);
+          if (cs.position === 'fixed' &&
+              parseFloat(cs.width)  > window.innerWidth  * 0.5 &&
+              parseFloat(cs.height) > window.innerHeight * 0.3) {
+            a.style.setProperty('pointer-events', 'none', 'important');
+          }
+        });
+      }
+      setTimeout(patchSocialBarOverlay, 600);
+      setInterval(patchSocialBarOverlay, 2000);
+    })();
+  </script>
 
   <!-- ── 국가별 Config 스크립트 (build.js가 자동 주입) ──
        빌드 시 config-in.js 또는 config-id.js가 여기에 인라인 삽입됩니다.
@@ -83,8 +105,8 @@ window.APP_CONFIG = {
   // WhatsApp/Facebook에서 링크를 공유할 때 미리보기로 표시됩니다.
   // ★ 실제 배포 후 이미지 URL과 사이트 URL을 반드시 교체하세요.
   og: {
-    title: "K-드라마 감성으로 보는 나의 오늘 럭키 베다 카드 🔮",
-    description: "고대 베다 지혜와 K-드라마 감성이 만났다! 오늘의 행운 카드를 뽑아보세요 ✨ Today's Vedic lucky card is waiting for you!",
+    title: "🔮 Reveal Your Vedic Lucky Card Today! Free & Instant",
+    description: "Ancient Vedic wisdom reveals your lucky number, colour & auspicious time in seconds ✨ Trusted cosmic reading — try it free now! 🙏",
     image: "https://dmazone.github.io/bhagya/og.jpg",
     url: "https://dmazone.github.io/bhagya"
   },
@@ -96,13 +118,14 @@ window.APP_CONFIG = {
     appSubtitle: "आज का भाग्य जानें! · Know Your Luck Today!",
     heroEmoji: "🔮✨🌟",
     ctaButton: "✨ Reveal My Lucky Card! 🙏",
-    ctaSubtext: "आज का शुभ संदेश · Today's Auspicious Sign",
+    ctaSubtext: "आज का शुभ संदेश · Ancient Vedic Wisdom for You",
     resultTitle: "🌟 Your Cosmic Reading 🌟",
     shareButton: "🟢 Share on WhatsApp & Spread the Luck!",
-    shareSubtext: "अपने परिवार और दोस्तों के साथ शेयर करें 🙏 · Share with family & friends",
+    shareSubtext: "Tag 3 friends & spread the cosmic energy! 🙏 · अपने 3 दोस्तों को टैग करें!",
     retryButton: "🔄 Get Another Reading",
     adNotice: "Consulting the cosmic stars... 🔮",
     smartlinkButton: "🔮 Explore Full Vedic Reading & Lucky Tips →",
+    koreaBadge: null,
 
     // 인도 스킨은 '카테고리 선택' 드롭다운을 제공합니다 (타이핑 제로 유지)
     // null로 설정하면 드롭다운 없이 순수 버튼 1개만 표시됩니다
@@ -255,8 +278,8 @@ window.APP_CONFIG = {
       '⏰ Lucky Time   : ' + result.luckyTime,
       result.vedicCard.cricketTip,
       '',
-      '👆 Tap to reveal YOUR Vedic Lucky Card!',
-      '— K-드라마 감성으로 보는 나의 오늘 럭키 베다 카드 🔮'
+      '👆 Tap to get YOUR FREE Vedic Lucky Card reading! 🔮',
+      '🙏 Trusted by millions — Instant & 100% Free!'
     ].join('\n');
   },
 
@@ -634,9 +657,18 @@ function openWhatsAppShare(config, result) {
           '</h1>',
 
           // 서브타이틀
-          '<p class="text-center text-white text-sm mb-8 px-4 max-w-xs" style="opacity:0.92">',
+          '<p class="text-center text-white text-sm mb-4 px-4 max-w-xs" style="opacity:0.92">',
           cfg.ui.appSubtitle,
           '</p>',
+
+          // K-뱃지 (인도네시아 스킨만 — 한국 트렌드 신뢰 마케팅)
+          cfg.ui.koreaBadge ? [
+            '<div class="text-center mb-5">',
+            '<span class="inline-block px-4 py-1.5 rounded-full text-xs font-black" style="background:rgba(255,255,255,0.28);color:white;letter-spacing:0.02em">',
+            cfg.ui.koreaBadge,
+            '</span>',
+            '</div>'
+          ].join('') : '<div class="mb-4"></div>',
 
           // 메인 카드
           '<div class="w-full max-w-sm rounded-3xl p-6 shadow-2xl animate-fade-in-up" style="background:var(--card-bg);border:1.5px solid var(--card-border);box-shadow:0 20px 50px var(--shadow-color)">',
